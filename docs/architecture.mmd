@@ -1,0 +1,12 @@
+flowchart LR
+  N[New synthetic referral] --> P[Policy or model proposal]
+  C[(Synthetic capacity)] --> P
+  P --> R[Version-bound review]
+  R --> A[Routed and accepted]
+  A --> S[Scheduled]
+  S --> F[Completion receipt]
+  F --> V[Local receipt lookup]
+  V --> D[Closed]
+  R --> O[(Draft outbox)]
+  R --> H[(Hash-linked audit)]
+  D --> H
