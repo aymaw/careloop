@@ -1,0 +1,219 @@
+{
+  "project": "CareLoop",
+  "mode": "synthetic-operations",
+  "proposal": {
+    "referral": "DEMO-001",
+    "action": "route",
+    "provider": "demo-harbor",
+    "version": 0,
+    "origin": "deterministic-capacity-policy",
+    "fingerprint": "49925159b56d05322caf189b599f0679c460f19e86635c3a41b2ff7ba6e1cd92"
+  },
+  "no_capacity": {
+    "referral": "DEMO-003",
+    "action": "needs_review",
+    "reason": "No matching synthetic capacity",
+    "version": 0
+  },
+  "audit_verified": true,
+  "worklist": [
+    {
+      "id": "DEMO-002",
+      "service": "imaging",
+      "region": "north",
+      "created_at": "2030-01-01T09:00:00Z",
+      "updated_at": "2030-01-01T09:00:00Z",
+      "status": "new",
+      "version": 0,
+      "provider": null,
+      "owner": "demo-coordinator",
+      "overdue": true
+    },
+    {
+      "id": "DEMO-003",
+      "service": "rehab",
+      "region": "south",
+      "created_at": "2030-01-01T09:00:00Z",
+      "updated_at": "2030-01-01T09:00:00Z",
+      "status": "new",
+      "version": 0,
+      "provider": null,
+      "owner": "demo-coordinator",
+      "overdue": true
+    }
+  ],
+  "referrals": [
+    {
+      "id": "DEMO-001",
+      "service": "rehab",
+      "region": "north",
+      "created_at": "2030-01-01T09:00:00Z",
+      "updated_at": "2030-01-03T11:00:00Z",
+      "status": "closed",
+      "version": 5,
+      "provider": "demo-harbor",
+      "owner": "demo-coordinator"
+    },
+    {
+      "id": "DEMO-002",
+      "service": "imaging",
+      "region": "north",
+      "created_at": "2030-01-01T09:00:00Z",
+      "updated_at": "2030-01-01T09:00:00Z",
+      "status": "new",
+      "version": 0,
+      "provider": null,
+      "owner": "demo-coordinator"
+    },
+    {
+      "id": "DEMO-003",
+      "service": "rehab",
+      "region": "south",
+      "created_at": "2030-01-01T09:00:00Z",
+      "updated_at": "2030-01-01T09:00:00Z",
+      "status": "new",
+      "version": 0,
+      "provider": null,
+      "owner": "demo-coordinator"
+    }
+  ],
+  "providers": [
+    {
+      "id": "demo-harbor",
+      "service": "rehab",
+      "region": "north",
+      "slots": 1
+    },
+    {
+      "id": "demo-meadow",
+      "service": "rehab",
+      "region": "south",
+      "slots": 0
+    },
+    {
+      "id": "demo-orbit",
+      "service": "imaging",
+      "region": "north",
+      "slots": 1
+    }
+  ],
+  "audit": [
+    {
+      "seq": 1,
+      "referral": "DEMO-001",
+      "version": 0,
+      "action": "created",
+      "actor": "demo-coordinator",
+      "at": "2030-01-01T09:00:00Z",
+      "data": {
+        "region": "north",
+        "service": "rehab"
+      },
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "3a16712e092a8e56db4226b4caaf776eb4178611ebe4ef9a69e7860ad6a54ea4"
+    },
+    {
+      "seq": 2,
+      "referral": "DEMO-002",
+      "version": 0,
+      "action": "created",
+      "actor": "demo-coordinator",
+      "at": "2030-01-01T09:00:00Z",
+      "data": {
+        "region": "north",
+        "service": "imaging"
+      },
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "3fcc5717d93b9176534c1dd38e8b54363edfac9bbd89a7abef6b871e61da5704"
+    },
+    {
+      "seq": 3,
+      "referral": "DEMO-003",
+      "version": 0,
+      "action": "created",
+      "actor": "demo-coordinator",
+      "at": "2030-01-01T09:00:00Z",
+      "data": {
+        "region": "south",
+        "service": "rehab"
+      },
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "cb7b6bf1c821742462df548870e13a5dcd312b79decb156ac903d5e710366805"
+    },
+    {
+      "seq": 4,
+      "referral": "DEMO-001",
+      "version": 1,
+      "action": "route",
+      "actor": "demo-reviewer",
+      "at": "2030-01-01T10:00:00Z",
+      "data": {
+        "proposal_fingerprint": "49925159b56d05322caf189b599f0679c460f19e86635c3a41b2ff7ba6e1cd92",
+        "provider": "demo-harbor"
+      },
+      "previous": "3a16712e092a8e56db4226b4caaf776eb4178611ebe4ef9a69e7860ad6a54ea4",
+      "hash": "12ff4c05e1d3dbf43859e5eb51f6f647f8601e13a46bbde7cfed67eeff4176a7"
+    },
+    {
+      "seq": 5,
+      "referral": "DEMO-001",
+      "version": 2,
+      "action": "accept",
+      "actor": "demo-coordinator",
+      "at": "2030-01-01T11:00:00Z",
+      "data": {},
+      "previous": "12ff4c05e1d3dbf43859e5eb51f6f647f8601e13a46bbde7cfed67eeff4176a7",
+      "hash": "ce1ff07ad7767d9be921c3843ab7ca431aaa1eb344412a9a57c2226413eedfc4"
+    },
+    {
+      "seq": 6,
+      "referral": "DEMO-001",
+      "version": 3,
+      "action": "schedule",
+      "actor": "demo-coordinator",
+      "at": "2030-01-01T12:00:00Z",
+      "data": {
+        "slot": "2030-01-03T09:00:00Z"
+      },
+      "previous": "ce1ff07ad7767d9be921c3843ab7ca431aaa1eb344412a9a57c2226413eedfc4",
+      "hash": "14a5f5fa9e9a6f36b71c70d9301fdb40e5fb668c9810a84f343975ff6634a90d"
+    },
+    {
+      "seq": 7,
+      "referral": "DEMO-001",
+      "version": 4,
+      "action": "complete",
+      "actor": "demo-coordinator",
+      "at": "2030-01-03T10:00:00Z",
+      "data": {
+        "receipt": "DEMO-RECEIPT-001"
+      },
+      "previous": "14a5f5fa9e9a6f36b71c70d9301fdb40e5fb668c9810a84f343975ff6634a90d",
+      "hash": "6cba754af404d9a81eb71e7ad99e8bf1245caa1abf841488813991709af69813"
+    },
+    {
+      "seq": 8,
+      "referral": "DEMO-001",
+      "version": 5,
+      "action": "close",
+      "actor": "demo-coordinator",
+      "at": "2030-01-03T11:00:00Z",
+      "data": {
+        "receipt": "DEMO-RECEIPT-001"
+      },
+      "previous": "6cba754af404d9a81eb71e7ad99e8bf1245caa1abf841488813991709af69813",
+      "hash": "ac4d2cde77247ffb30f58317712058ec9f1a490f61cb0af75ed4eea4ddcc825b"
+    }
+  ],
+  "outbox": [
+    {
+      "id": "DEMO-001:1",
+      "referral": "DEMO-001",
+      "payload": {
+        "provider": "demo-harbor",
+        "template": "synthetic-routing-notice"
+      },
+      "status": "draft"
+    }
+  ]
+}

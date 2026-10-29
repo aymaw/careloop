@@ -1,0 +1,8 @@
+{
+  "referral": "DEMO-001",
+  "action": "route",
+  "provider": "demo-harbor",
+  "version": 0,
+  "origin": "deterministic-capacity-policy",
+  "fingerprint": "49925159b56d05322caf189b599f0679c460f19e86635c3a41b2ff7ba6e1cd92"
+}
